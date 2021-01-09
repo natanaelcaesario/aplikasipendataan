@@ -23,16 +23,27 @@
                         <li class="active nav-item" id="1">
                             <a class="nav-link" href="home">Home</a>
                         </li>
-                        <li class="nav-item" id="2">
-                            <a class="nav-link" href="profil">Profil</a>
+                        <li class="active nav-item" id="5">
+                            <a class="nav-link" href="olimpiade">Kompetisi</a>
                         </li>
+                        <?php if (session()->has('admin')) {  ?>
+
+                            <li class="nav-item" id="3">
+                                <a class="nav-link" href="dashboard">Dashboard</a>
+                            </li>
+
+                        <?php }  ?>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-
-                        <li class="nav-item" id="3">
-                            <a class="nav-link" href="login">Login / Daftar</a>
-                        </li>
-
+                        <?php if (!session()->has('admin')) {  ?>
+                            <li class="nav-item" id="3">
+                                <a class="nav-link" href="login">Login</a>
+                            </li>
+                        <?php } else { ?>
+                            <li class="nav-item" id="3">
+                                <a class="nav-link" href="logout">Logout</a>
+                            </li>
+                        <?php }  ?>
                     </ul>
                 </div>
             </div>

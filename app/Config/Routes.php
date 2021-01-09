@@ -32,11 +32,31 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('home', 'Home::index');
-$routes->get('login', 'Home::login');
-$routes->get('daftar', 'Home::daftar');
+$routes->add('login', 'Home::login');
+$routes->add('olimpiade', 'Home::olimpiade');
+// $routes->add('daftar', 'Home::daftar');
+$routes->get('logout', 'Home::logout');
+
+// data
+$routes->add('editdata', 'Home::editdata');
+$routes->add('pengguna', 'Home::ambil');
+$routes->add('hapussertifikat', 'Home::hapussertifikat');
+$routes->add('hapusbuktidaftar', 'Home::hapusbuktidaftar');
+$routes->add('gantisertifikat', 'Home::gantisertifikat');
+$routes->add('gantibuktidaftar', 'Home::gantibuktidaftar');
+$routes->add('hapusdata/(:num)', 'Home::hapusdata');
+
+
+// kompetisi
+$routes->add('tambahkompetisi', 'Home::tambahkompetisi');
+$routes->add('editkompetisi', 'Home::editkompetisi');
+$routes->add('updatekompetisi', 'Home::updatekompetisi');
+$routes->get('hapuskompetisi/(:num)', 'Home::hapuskompetisi');
+
+
+$routes->get('kompetisi', 'Home::kompetisi');
+$routes->add('dashboard', 'Home::dashboard');
 $routes->get('profil', 'Home::profil');
-$routes->get('dashboard', 'Home::dashboard');
-$routes->get('pengguna', 'Home::pengguna');
 /**
  * --------------------------------------------------------------------
  * Additional Routing

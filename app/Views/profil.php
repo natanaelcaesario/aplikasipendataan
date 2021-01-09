@@ -37,6 +37,7 @@
     $("#1").removeClass('active');
     $("#2").addClass('active');
     $("#3").removeClass('active');
+    $("#5").removeClass('active');
     $("#4").removeClass('active');
 </script>
 
